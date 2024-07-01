@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感谢各位老板的赞赏</title>
+    <style>
+        /* Reset and base styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        /* Container for main content */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #eee;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #0056b3;
+        }
+        p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        /* Sponsor list styles */
+        .sponsor-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .sponsor-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #e9f5fc, #d6ebf8);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .sponsor-list li:hover {
+            background: linear-gradient(135deg, #d6ebf8, #c3e1f4);
+            transform: translateY(-5px);
+        }
+        .sponsor-info {
+            flex: 1;
+        }
+        .sponsor-info span {
+            display: block;
+        }
+        .sponsor-name {
+            font-weight: bold;
+            color: #0056b3;
+            font-size: 1.2em;
+        }
+        .sponsor-date,
+        .sponsor-amount {
+            font-size: 1em;
+            color: #666;
+        }
+        .sponsor-amount {
+            font-weight: bold;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0056b3;
+            color: white;
+            border-radius: 0 0 10px 10px;
+            margin-top: 20px; /* Add some space between content and footer */
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+        footer .contact-info {
+            font-size: 0.9em;
+            color: #ddd; /* Adjust contact info color */
+        }
+        @media (max-width: 600px) {
+            /* Responsive adjustments */
+            .container {
+                padding: 15px;
+            }
+            header, footer {
+                padding: 15px 0;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>感谢各位老板的赞赏</h1>
+            <p>每一次赞赏都是我们前行的动力，去不断琢磨车机</p>
+        </header>
+        
+        <ul class="sponsor-list">
+            <li>
+                <div class="sponsor-info">
+                    <span class="sponsor-name">熊先生</span>
+                    <span class="sponsor-date">2023年08月21日</span>
+                </div>
+                <span class="sponsor-amount">赞赏5元</span>
+            </li>
+            <li>
+                <div class="sponsor-info">
+                    <span class="sponsor-name">古人</span>
+                    <span class="sponsor-date">2023年08月28日</span>
+                </div>
+                <span class="sponsor-amount">赞赏5元</span>
+            </li>
+            <li>
+                <div class="sponsor-info">
+                    <span class="sponsor-name">仄言</span>
+                    <span class="sponsor-date">2024年01月05日</span>
+                </div>
+                <span class="sponsor-amount">赞赏3.98元</span>
+            </li>
+            <li>
+                <div class="sponsor-info">
+                    <span class="sponsor-name">北北</span>
+                    <span class="sponsor-date">2024年02月02日</span>
+                </div>
+                <span class="sponsor-amount">赞赏1.99元</span>
+            </li>
+            <li>
+                <div class="sponsor-info">
+                    <span class="sponsor-name">昵称（空白）01</span>
+                    <span class="sponsor-date">2024年03月21日</span>
+                </div>
+                <span class="sponsor-amount">赞赏1.99元</span>
+            </li>
+            <li>
+                <div class="sponsor-info">
+                    <span class="sponsor-name">Sutter</span>
+                    <span class="sponsor-date">2024年04月10日</span>
+                </div>
+                <span class="sponsor-amount">赞赏1.99元</span>
+            </li>
+            <li>
+                <div class="sponsor-info">
+                    <span class="sponsor-name">昵称（空白）02</span>
+                    <span class="sponsor-date">2024年06月30日</span>
+                </div>
+                <span class="sponsor-amount">赞赏18.88元</span>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p class="contact-info">联系人：徐大兵</p>
+        <p class="contact-info">邮箱：554719247@qq.com</p>
+    </footer>
+</body>
+</html>
