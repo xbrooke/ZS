@@ -1,180 +1,351 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>感谢各位老板的赞赏</title>
-    <style>
-        /* Reset and base styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        /* Container for main content */
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        /* Header styles */
-        header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #eee;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #0056b3;
-        }
-        p {
-            color: #666;
-            font-size: 1.1em;
-        }
-        /* Sponsor list styles */
-        .sponsor-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        .sponsor-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, #e9f5fc, #d6ebf8);
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, background 0.3s;
-        }
-        .sponsor-list li:hover {
-            background: linear-gradient(135deg, #d6ebf8, #c3e1f4);
-            transform: translateY(-5px);
-        }
-        .sponsor-info {
-            flex: 1;
-        }
-        .sponsor-info span {
-            display: block;
-        }
-        .sponsor-name {
-            font-weight: bold;
-            color: #0056b3;
-            font-size: 1.2em;
-        }
-        .sponsor-date,
-        .sponsor-amount {
-            font-size: 1em;
-            color: #666;
-        }
-        .sponsor-amount {
-            font-weight: bold;
-            color: #333;
-            background-color: #f0f0f0;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        /* Footer styles */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0056b3;
-            color: white;
-            border-radius: 0 0 10px 10px;
-            margin-top: 20px; /* Add some space between content and footer */
-        }
-        footer p {
-            margin: 5px 0;
-            font-size: 1em;
-        }
-        footer .contact-info {
-            font-size: 0.9em;
-            color: #ddd; /* Adjust contact info color */
-        }
-        @media (max-width: 600px) {
-            /* Responsive adjustments */
-            .container {
-                padding: 15px;
-            }
-            header, footer {
-                padding: 15px 0;
-            }
-            h1 {
-                font-size: 2em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>感谢赞助者</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      max-width: 1000px; /* 调整最大宽度 */
+      background-color: #fff;
+      padding: 40px; /* 增加内边距 */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+      margin-top: 0;
+      font-size: 2.5em; /* 调整标题字体大小 */
+      margin-bottom: 20px; /* 调整标题与内容的间距 */
+    }
+    p {
+      color: #666;
+      margin-bottom: 30px; /* 增加感谢文字与表格的间距 */
+      font-size: 1.2em; /* 调整感谢文字的字体大小 */
+    }
+    table {
+      width: 100%; /* 表格宽度100% */
+      margin: 20px auto; /* 居中显示 */
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      padding: 15px; /* 增加单元格内边距 */
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s ease;
+    }
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+      text-transform: uppercase;
+      font-size: 1.2em; /* 调整表头字体大小 */
+    }
+    td {
+      color: #555;
+      font-size: 1em; /* 调整表格内容字体大小 */
+    }
+    tr:hover td {
+      background-color: #f1f1f1;
+    }
+    .thanks-message {
+      font-size: 1.1em; /* 调整感谢文字的字体大小 */
+      color: #888;
+      margin-top: 20px; /* 调整感谢文字与表格的间距 */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .thanks-message:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em; /* 调整按钮字体大小 */
+      margin-top: 30px; /* 增加按钮与感谢文字的间距 */
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .button:hover {
+      background-color: #45a049;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px; /* 调整模态框最大宽度 */
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: slideIn 0.3s ease-out;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .close:hover,
+    .close:focus {
+      color: #333;
+      text-decoration: none;
+    }
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px; /* 调整表单组件之间的间距 */
+    }
+    .form-group label {
+      text-align: left;
+      margin-bottom: 10px; /* 调整标签与输入框的间距 */
+      color: #333;
+      font-size: 1.1em; /* 调整标签字体大小 */
+      font-weight: bold;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em; /* 调整输入框字体大小 */
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+    .form-group input:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    .submit-button {
+      width: 100%;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1em; /* 调整按钮字体大小 */
+      margin-top: 20px; /* 增加按钮与输入框的间距 */
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>感谢各位老板的赞赏👏👏</h1>
-            <p>每一次赞赏都是我们前行的动力，我们将不断琢磨车机💪</p>
-        </header>
-        
-        <ul class="sponsor-list">
-            <li>
-                <div class="sponsor-info">
-                    <span class="sponsor-name">熊先生</span>
-                    <span class="sponsor-date">2023年08月21日</span>
-                </div>
-                <span class="sponsor-amount">赞赏5元</span>
-            </li>
-            <li>
-                <div class="sponsor-info">
-                    <span class="sponsor-name">古人</span>
-                    <span class="sponsor-date">2023年08月28日</span>
-                </div>
-                <span class="sponsor-amount">赞赏5元</span>
-            </li>
-            <li>
-                <div class="sponsor-info">
-                    <span class="sponsor-name">仄言</span>
-                    <span class="sponsor-date">2024年01月05日</span>
-                </div>
-                <span class="sponsor-amount">赞赏3.98元</span>
-            </li>
-            <li>
-                <div class="sponsor-info">
-                    <span class="sponsor-name">北北</span>
-                    <span class="sponsor-date">2024年02月02日</span>
-                </div>
-                <span class="sponsor-amount">赞赏1.99元</span>
-            </li>
-            <li>
-                <div class="sponsor-info">
-                    <span class="sponsor-name">昵称（空白）01</span>
-                    <span class="sponsor-date">2024年03月21日</span>
-                </div>
-                <span class="sponsor-amount">赞赏1.99元</span>
-            </li>
-            <li>
-                <div class="sponsor-info">
-                    <span class="sponsor-name">Sutter</span>
-                    <span class="sponsor-date">2024年04月10日</span>
-                </div>
-                <span class="sponsor-amount">赞赏1.99元</span>
-            </li>
-            <li>
-                <div class="sponsor-info">
-                    <span class="sponsor-name">昵称（空白）02</span>
-                    <span class="sponsor-date">2024年06月30日</span>
-                </div>
-                <span class="sponsor-amount">赞赏18.88元</span>
-            </li>
-        </ul>
+  <div class="container">
+    <h1>感谢赞助者</h1>
+    <p>我们由衷感谢以下赞助者的慷慨支持：</p>
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>时间</th>
+          <th>金额</th>
+        </tr>
+      </thead>
+      <tbody id="sponsor-list">
+        <tr>
+          <td>张三</td>
+          <td>2023年6月</td>
+          <td>100元</td>
+        </tr>
+        <tr>
+          <td>李四</td>
+          <td>2023年7月</td>
+          <td>200元</td>
+        </tr>
+        <tr>
+          <td>王五</td>
+          <td>2023年8月</td>
+          <td>150元</td>
+        </tr>
+        <!-- 根据实际情况添加更多赞助者的信息 -->
+      </tbody>
+    </table>
+    <div class="thanks-message">
+      <p>您的慷慨赞助使我们能够继续做出更好的产品/服务。再次感谢！</p>
     </div>
+    <button class="button" id="add-button" onclick="togglePasswordModal()">添加赞助者</button>
+  </div>
 
-    <footer>
-        <p class="contact-info">联系人：徐大兵</p>
-        <p class="contact-info">邮箱：554719247@qq.com</p>
-    </footer>
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="togglePasswordModal()">&times;</span>
+      <div class="form-container">
+        <div class="form-group">
+          <label for="password">请输入密码：</label>
+          <input type="password" id="password" placeholder="输入密码">
+        </div>
+        <button class="submit-button" onclick="validatePassword()">验证密码</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="sponsorModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleModal()">&times;</span>
+      <div class="form-container">
+        <div class="form-group">
+          <label for="name">赞助者姓名：</label>
+          <input type="text" id="name" placeholder="请输入赞助者姓名">
+        </div>
+        <div class="form-group">
+          <label for="date">赞助时间：</label>
+          <input type="text" id="date" placeholder="请输入赞助时间">
+        </div>
+        <div class="form-group">
+          <label for="amount">赞助金额：</label>
+          <input type="text" id="amount" placeholder="请输入赞助金额">
+        </div>
+        <button class="submit-button" onclick="submitSponsor()">提交赞助信息</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let passwordModalVisible = false;
+    let sponsorModalVisible = false;
+
+    function togglePasswordModal() {
+      const modal = document.getElementById('passwordModal');
+      if (passwordModalVisible) {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300);
+      } else {
+        modal.style.display = 'block';
+        setTimeout(() => {
+          modal.style.opacity = '1';
+        }, 50);
+      }
+      passwordModalVisible = !passwordModalVisible;
+    }
+
+    function toggleModal() {
+      const modal = document.getElementById('sponsorModal');
+      if (sponsorModalVisible) {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300);
+      } else {
+        modal.style.display = 'block';
+        setTimeout(() => {
+          modal.style.opacity = '1';
+        }, 50);
+      }
+      sponsorModalVisible = !sponsorModalVisible;
+    }
+
+    function validatePassword() {
+      const password = document.getElementById('password').value;
+      // 假设正确的密码为 '123456'
+      if (password === '123456') {
+        togglePasswordModal();
+        toggleModal();
+      } else {
+        alert('密码错误，请重新输入！');
+      }
+    }
+
+    function submitSponsor() {
+      const name = document.getElementById('name').value;
+      const date = document.getElementById('date').value;
+      const amount = document.getElementById('amount').value;
+
+      if (name && date && amount) {
+        const sponsorList = document.getElementById('sponsor-list');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${name}</td>
+          <td>${date}</td>
+          <td>${amount}</td>
+        `;
+        sponsorList.appendChild(newRow);
+
+        // 清空表单
+        document.getElementById('name').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('amount').value = '';
+
+        // 隐藏模态框
+        toggleModal();
+      } else {
+        alert('请填写所有字段');
+      }
+    }
+
+    // 点击模态框外部关闭模态框
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.opacity = '0';
+          setTimeout(() => {
+            modal.style.display = 'none';
+          }, 300);
+          if (modal.id === 'passwordModal') {
+            passwordModalVisible = false;
+          } else if (modal.id === 'sponsorModal') {
+            sponsorModalVisible = false;
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>
